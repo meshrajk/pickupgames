@@ -18,8 +18,19 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { LoginFormComponent } from './components/shared/login-form/login-form.component';
 import { MatCardModule } from '@angular/material/card'
 import { MatInputModule } from '@angular/material/input'
+import { MatMenuModule } from '@angular/material/menu'
+import { MatGridListModule } from '@angular/material/grid-list'
 
 import { ReactiveFormsModule } from '@angular/forms';
+import { GameformsComponent } from './components/addedit/gameforms/gameforms.component';
+import { PickupgameformsComponent } from './components/addedit/pickupgameforms/pickupgameforms.component';
+import { AddressformsComponent } from './components/addedit/addressforms/addressforms.component';
+import { PickupgameCardComponent } from './components/pickupgame-card/pickupgame-card.component';
+import { AddressCardComponent } from './components/address-card/address-card.component';
+
+import { AuthModule } from '@auth0/auth0-angular';
+import { ProfileComponent } from './components/profile/profile.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +39,13 @@ import { ReactiveFormsModule } from '@angular/forms';
     LoginComponent,
     PickupgameComponent,
     LayoutComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    GameformsComponent,
+    PickupgameformsComponent,
+    AddressformsComponent,
+    PickupgameCardComponent,
+    AddressCardComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -41,8 +58,14 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatButtonModule,
     FlexLayoutModule,
     MatCardModule,
+    MatMenuModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    MatGridListModule,
+    AuthModule.forRoot({
+      domain: 'dev-pur52c3g0ls2jjq3.us.auth0.com',
+      clientId: 'uoQ8smSGwrYCWl5mtJCi3bEimmDBdc1I'
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

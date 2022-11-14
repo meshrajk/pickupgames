@@ -4,6 +4,7 @@ import { AuthGuardService as AuthGuard } from './auth/auth-guard.service';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { GameComponent } from './components/game/game.component';
 import { LoginComponent } from './components/login/login.component';
+import { PickupgameComponent } from './components/pickupgame/pickupgame.component';
 import { LayoutComponent } from './components/shared/layout/layout.component';
 
 const routes: Routes = [
@@ -21,6 +22,10 @@ const routes: Routes = [
         component: GameComponent
       },
       {
+        path: 'pickupgame',
+        component: PickupgameComponent
+      },
+      {
         path: '',
         component: DashboardComponent
       }
@@ -33,7 +38,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    onSameUrlNavigation:'reload'
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
