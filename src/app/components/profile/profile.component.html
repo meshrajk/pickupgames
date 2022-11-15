@@ -1,0 +1,9 @@
+<button mat-button [matMenuTriggerFor]="profileMenu" *ngIf="auth.user$ | async as user">
+    <img [src]="user.picture" class="userImg" />
+</button>
+
+<mat-menu #profileMenu>
+  <button (click)="auth.logout({ returnTo: origin })">
+    Log out
+  </button>
+</mat-menu>

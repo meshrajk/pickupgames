@@ -1,0 +1,17 @@
+<h2>My Upcoming Games</h2>
+<span *ngIf="participatedGames?.length; else noUpcomingGames">
+    <span *ngFor="let pickUpGame of participatedGames">
+        <app-pickupgame-card [pickupGame]="pickUpGame" [myGame]="true" (updated)="getGames()"></app-pickupgame-card>
+    </span>
+</span>
+<ng-template #noUpcomingGames>
+    <mat-card>
+        <mat-card-title> There are no upcoming games.</mat-card-title>
+        <mat-card-subtitle>Check out the local games below or create your <a routerLink="/pickupgame">own
+                here</a>.</mat-card-subtitle>
+    </mat-card>
+</ng-template>
+<h2>Games Around Me</h2>
+<span *ngFor="let pickUpGame of avaliableGames">
+    <app-pickupgame-card [pickupGame]="pickUpGame" (updated)="getGames()"></app-pickupgame-card>
+</span>
