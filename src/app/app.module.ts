@@ -65,6 +65,8 @@ import { ProfileComponent } from './components/profile/profile.component';
     AuthModule.forRoot({
       domain: 'dev-pur52c3g0ls2jjq3.us.auth0.com',
       clientId: 'uoQ8smSGwrYCWl5mtJCi3bEimmDBdc1I'
+      //domain: 'dev-pur52c3g0ls2jjq3.us.auth0.com',
+      //clientId: 'MBMYRPd24TbuX4d8Sw6MW5Szn1RL4T9R'
     }),
   ],
   providers: [],
